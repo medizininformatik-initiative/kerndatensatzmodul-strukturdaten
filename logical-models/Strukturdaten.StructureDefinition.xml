@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://www.medizininformatik-initiative.de/fhir/ext/modul-strukturdaten/StructureDefinition/LogicalModel/Strukturdaten" />
+  <version value="0.0.1" />
+  <name value="LogicalModel_MII_Strukturdaten" />
+  <status value="draft" />
+  <experimental value="false" />
+  <description value="Logische Repräsentation des Erweiterungsmoduls Strukturdaten" />
+  <fhirVersion value="4.0.1" />
+  <kind value="logical" />
+  <abstract value="false" />
+  <type value="https://www.medizininformatik-initiative.de/fhir/ext/modul-strukturdaten/StructureDefinition/LogicalModel/Strukturdaten" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Element" />
+  <derivation value="specialization" />
+  <differential>
+    <element id="Strukturdaten">
+      <path value="Strukturdaten" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Element" />
+      </type>
+      <mustSupport value="false" />
+    </element>
+    <element id="Strukturdaten.Krankenhaus">
+      <path value="Strukturdaten.Krankenhaus" />
+      <short value="Ein zugelassenes Krankenhaus." />
+      <definition value="Ein nach $108 SGB V zugelassenes Krankenhaus." />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Institutionskennzeichen">
+      <path value="Strukturdaten.Krankenhaus.Institutionskennzeichen" />
+      <short value="Institutionskennzeichen." />
+      <definition value="Das bundesweit eindeutige, neunstellige Institutionskennzeichen des Krankenhauses gemäß §293 SGB V." />
+      <alias value="IK-Nummer" />
+      <alias value="Haupt-IK" />
+      <alias value="IK-Nr" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+        <profile value="http://fhir.de/StructureDefinition/identifier-iknr" />
+      </type>
+      <example>
+        <label value="Universitätsklinikum Leipzig AöR" />
+        <valueIdentifier>
+          <use value="official" />
+          <type>
+            <text value="261401052" />
+          </type>
+        </valueIdentifier>
+      </example>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Name">
+      <path value="Strukturdaten.Krankenhaus.Name" />
+      <short value="Krankenhausname" />
+      <definition value="Der Name des Krankenhauses." />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+      <example>
+        <label value="Immanuel Krankenhaus Berlin" />
+        <valueString value="Immanuel Krankenhaus Berlin" />
+      </example>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Ermächtigungsgrundlage">
+      <path value="Strukturdaten.Krankenhaus.Ermächtigungsgrundlage" />
+      <short value="Ermächtigungsgrundlage" />
+      <definition value="Die nach §108 SGB V defnierten Ermächtigungsgrundlagen für zugelassene Krankenhäuser.&#xD;&#xA;(Hochschulklinik | Plankrankenhaus | Versorgungsvertrag)" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+      <example>
+        <label value="Ermächtigungsgrundlage" />
+        <valueCode value="Versorgungsvertrag" />
+      </example>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Leitung">
+      <path value="Strukturdaten.Krankenhaus.Leitung" />
+      <definition value="Die Leitung des Krankenhauses." />
+      <min value="1" />
+      <max value="3" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Leitung.Rolle">
+      <path value="Strukturdaten.Krankenhaus.Leitung.Rolle" />
+      <definition value="Der Leitungstyp (Medizinisch|Pflegerisch|Verwaltend)." />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/PractitionerRole" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Leitung.Person">
+      <path value="Strukturdaten.Krankenhaus.Leitung.Person" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Träger">
+      <path value="Strukturdaten.Krankenhaus.Träger" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Träger.Art">
+      <path value="Strukturdaten.Krankenhaus.Träger.Art" />
+      <definition value="Die Art der Trägerschaft des Krankenhauses.&#xD;&#xA;(öffentlich | privat | freigemeinnützig)" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Träger.Name">
+      <path value="Strukturdaten.Krankenhaus.Träger.Name" />
+      <definition value="Der Name des Trägers." />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Adresse">
+      <path value="Strukturdaten.Krankenhaus.Adresse" />
+      <short value="Adresse" />
+      <definition value="Die Adressen des Krankenhauses, unterschieden nach postalischer und physischer Adresse." />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Adresse.Postalisch">
+      <path value="Strukturdaten.Krankenhaus.Adresse.Postalisch" />
+      <short value="Postalische Adresse" />
+      <definition value="Die postalische Adresse des Krankenhauses." />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Address" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Address" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Adresse.Physisch">
+      <path value="Strukturdaten.Krankenhaus.Adresse.Physisch" />
+      <short value="Physische Adresse" />
+      <definition value="Die physische Adresse des Krankenhauses, an welchem sich der Zugang befindet." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Address" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Address" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation">
+      <path value="Strukturdaten.Krankenhaus.Organisation" />
+      <short value="Standort" />
+      <definition value="Struktur- und Leistungsdaten der Standorte." />
+      <min value="1" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Organisationsidentifikator">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Organisationsidentifikator" />
+      <short value="Organisationsidentifikator" />
+      <definition value="Organisationsidentifikator" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.isPartOf">
+      <path value="Strukturdaten.Krankenhaus.Organisation.isPartOf" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Organisationstyp">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Organisationstyp" />
+      <definition value="(Krankenhausstandort | Zentrum | MVZ | Forschung &amp; Lehre | Verwaltung | Sozialdienst/Seelsorge | Patienten- und Besucherservice | Medizinisches Labor | Technisches Labor | Biobank | Transfusionsmedizin)" />
+      <min value="1" />
+      <max value="*" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/ValueSet" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Name">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Name" />
+      <short value="Name" />
+      <definition value="Der Name der Organisation." />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Leitung">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Leitung" />
+      <min value="1" />
+      <max value="3" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Leitung.Rolle">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Leitung.Rolle" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/PractitionerRole" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Leitung.Person">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Leitung.Person" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Webseite">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Webseite" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="url" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/url" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Bettenanzahl">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Bettenanzahl" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="integer" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/integer" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Fallzahlen">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Fallzahlen" />
+      <short value="Fallzahlen" />
+      <definition value="Die aggregierten Fallzahlen eines Krankenhausstandortes.&#xD;&#xA;Die Angabe des Elements ist nur zulässig, wenn die Organisation eines Organisationstyps Fallzahlen erhebt." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Fallzahlen.Ambulant">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Fallzahlen.Ambulant" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="integer" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/integer" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Fallzahlen.Stationär">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Fallzahlen.Stationär" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="integer" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/integer" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Fallzahlen.Teilstationär">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Fallzahlen.Teilstationär" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="integer" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/integer" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Adresse">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Adresse" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Adresse.Postalisch">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Adresse.Postalisch" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Address" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Address" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Adresse.Physisch">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Adresse.Physisch" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Address" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Address" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Abteilung">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Abteilung" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Abteilung.Fachabteilungsschlüssel">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Abteilung.Fachabteilungsschlüssel" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Abteilung.OE-Nummer">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Abteilung.OE-Nummer" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Abteilung.Name">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Abteilung.Name" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Abteilung.Abteilungstyp">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Abteilung.Abteilungstyp" />
+      <short value="Abteilungstyp" />
+      <definition value="(medizinisch | pflegerisch | therapeutisch | diagnostisch | verwaltend | standard)" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Abteilung.Versorgungsstufe">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Abteilung.Versorgungsstufe" />
+      <short value="Versorgungsstufe" />
+      <definition value="(stationär | ambulant | vorstationär | teilstationär | nachstationär)" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Abteilung.Ort">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Abteilung.Ort" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Abteilung.Ort.Name">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Abteilung.Ort.Name" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Abteilung.Ort.isPartOf">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Abteilung.Ort.isPartOf" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Location" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Abteilung.Ort.Typ">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Abteilung.Ort.Typ" />
+      <definition value="(Raum | Flur | Bett)" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/ValueSet" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Abteilung.Diagnose">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Abteilung.Diagnose" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Abteilung.Diagnose.ICD10_Code">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Abteilung.Diagnose.ICD10_Code" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/CodeSystem" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Abteilung.Diagnose.Anzahl">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Abteilung.Diagnose.Anzahl" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="integer" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/integer" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Abteilung.Prozedur">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Abteilung.Prozedur" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Abteilung.Prozedur.OPS_Code">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Abteilung.Prozedur.OPS_Code" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/CodeSystem" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Abteilung.Prozedur.Anzahl">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Abteilung.Prozedur.Anzahl" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="integer" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/integer" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Abteilung.Fallzahlen_OE">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Abteilung.Fallzahlen_OE" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Abteilung.Fallzahlen_OE.Ambulant">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Abteilung.Fallzahlen_OE.Ambulant" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="integer" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/integer" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Abteilung.Fallzahlen_OE.Stationär">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Abteilung.Fallzahlen_OE.Stationär" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="integer" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/integer" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Abteilung.Fallzahlen_OE.Teilstationär">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Abteilung.Fallzahlen_OE.Teilstationär" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="integer" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/integer" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Versorgungsstelle">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Versorgungsstelle" />
+      <short value="Versorgungsstelle" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Versorgungsstelle.Versorgungsstellenidentifikator">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Versorgungsstelle.Versorgungsstellenidentifikator" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Versorgungsstelle.Name">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Versorgungsstelle.Name" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Versorgungsstelle.partOf">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Versorgungsstelle.partOf" />
+      <definition value="Wenn die Versorgungsstelle Teil einer Abteilung ist, wird es hier angegeben." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Reference" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Versorgungsstelle.Abteilungsstyp">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Versorgungsstelle.Abteilungsstyp" />
+      <definition value="(medizinisch | pflegerisch | therapeutisch | diagnostisch)" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Versorgungsstelle.Versorgungsstufe">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Versorgungsstelle.Versorgungsstufe" />
+      <definition value="(stationär | ambulant | vorstationär | teilstationär | nachstationär)" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Versorgungsstelle.Ort">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Versorgungsstelle.Ort" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Versorgungsstelle.Ort.Name">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Versorgungsstelle.Ort.Name" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Versorgungsstelle.Ort.isPartOf">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Versorgungsstelle.Ort.isPartOf" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Location" />
+      </type>
+    </element>
+    <element id="Strukturdaten.Krankenhaus.Organisation.Versorgungsstelle.Ort.Typ">
+      <path value="Strukturdaten.Krankenhaus.Organisation.Versorgungsstelle.Ort.Typ" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/ValueSet" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>
