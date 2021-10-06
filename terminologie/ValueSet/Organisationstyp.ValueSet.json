@@ -1,0 +1,67 @@
+{
+  "resourceType": "ValueSet",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-strukturdaten/ValueSet/Organisationstyp",
+  "version": "0.0.1",
+  "name": "Organisationstyp",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "Medizininformatik Initiative",
+  "description": "Organisationstyp",
+  "compose": {
+    "include": [
+      {
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-strukturdaten/CodeSystem/Organisationstyp",
+        "concept": [
+         {
+           "code": "KL",
+           "display": "Klinik"
+         },
+         {
+           "code": "KHS",
+           "display": "Krankenhausstandort"
+         },
+         {
+           "code": "Z",
+           "display": "Zentrum"
+         },
+         {
+           "code": "MVZ",
+           "display": "Medizinisches Versorgungszentrum"
+         },
+         {
+           "code": "V",
+           "display": "Verwaltung"
+         },
+         {
+           "code": "F",
+           "display": "Forschung"
+         },
+         {
+           "code": "L",
+           "display": "Lehre"      
+         },
+         {
+           "code": "MLAB",
+           "display": "Medizinisches Labor"
+         },
+         {
+           "code": "TLAB",
+           "display": "Technisches Labor"
+         },
+         {
+           "code": "BIO",
+           "display": "Biobank"
+         },
+         {
+           "code": "TM",
+           "display": "Transfusionsmedizin"
+         },
+         {
+           "code": "DIZ",
+           "display": "Datenintegrationszentrum"
+         }
+        ]
+      }
+    ]
+  }
+}

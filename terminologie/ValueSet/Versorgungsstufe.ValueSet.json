@@ -1,0 +1,43 @@
+{
+  "resourceType": "ValueSet",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-strukturdaten/ValueSet/Versorgungsstufe",
+  "version": "0.0.1",
+  "name": "Versorgungsstufe",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "Medizininformatik Initiative",
+  "description": "Versorgungsstufe",
+  "compose": {
+    "include": [
+      {
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-strukturdaten/CodeSystem/Versorgungsstufe",
+        "concept": [
+          {
+            "code": "M",
+            "display": "medizinisch"
+          },
+          {
+            "code": "P",
+            "display": "pflegerisch"
+          },
+          {
+            "code": "T",
+            "display": "therapeutisch"
+          },
+          {
+            "code": "D",
+            "display": "diagnostisch"
+          },
+          {
+            "code": "V",
+            "display": "verwaltend"
+          },
+          {
+            "code": "S",
+            "display": "standard"
+          }
+        ]
+      }
+    ]
+  }
+}

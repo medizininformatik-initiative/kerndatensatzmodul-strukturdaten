@@ -1,0 +1,37 @@
+{
+  "resourceType": "CodeSystem",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-strukturdaten/CodeSystem/Abteilungstyp",
+  "version": "0.0.1",
+  "name": "Abteilungstyp",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "Medizininformatik Initiative",
+  "description": "Abteilungstyp",
+  "content": "complete",
+  "concept": [
+    {
+      "code": "M",
+      "display": "medizinisch"
+    },
+    {
+      "code": "P",
+      "display": "pflegerisch"
+    },
+    {
+      "code": "T",
+      "display": "therapeutisch"
+    },
+    {
+      "code": "D",
+      "display": "diagnostisch"
+    },
+    {
+      "code": "V",
+      "display": "verwaltend"
+    },
+    {
+      "code": "S",
+      "display": "standard"
+    }
+  ]
+}

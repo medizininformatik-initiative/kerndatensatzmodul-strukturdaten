@@ -1,0 +1,31 @@
+{
+  "resourceType": "ValueSet",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-strukturdaten/ValueSet/Traeger_Art",
+  "version": "0.0.1",
+  "name": "Traeger_Art",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "Medizininformatik Initiative",
+  "description": "Art der Trägerschaft",
+  "compose": {
+    "include": [
+      {
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-strukturdaten/CodeSystem/Traeger_Art",
+        "concept": [
+          {
+            "code": "O",
+            "display": "öffentlich"
+          },
+          {
+            "code": "P",
+            "display": "privat"
+          },
+          {
+            "code": "f",
+            "display": "freigemeinnützig"
+          }
+        ]
+      }
+    ]
+  }
+}
