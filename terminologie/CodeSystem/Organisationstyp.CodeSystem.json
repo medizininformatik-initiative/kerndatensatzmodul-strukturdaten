@@ -10,56 +10,56 @@
   "content": "complete",
   "concept": [
     {
-      "code": "KH",
-      "display": "Krankenhaus"
+      "code": "DPT",
+      "display": "Department"
     },
     {
-      "code": "KL",
+      "code": "KLK",
       "display": "Klinik"
     },
     {
-      "code": "KHS",
-      "display": "Krankenhausstandort"
+      "code": "PKL",
+      "display": "Polyklinik"
     },
     {
-      "code": "Z",
-      "display": "Zentrum"
+      "code": "INS",
+      "display": "Institut"
     },
     {
-      "code": "MVZ",
-      "display": "Medizinisches Versorgungszentrum"
+      "code": "ABT",
+      "display": "Abteilung"
     },
     {
-      "code": "V",
-      "display": "Verwaltung"
+      "code": "SEK",
+      "display": "Sektion"
     },
     {
-      "code": "F",
-      "display": "Forschung"
+      "code": "BER",
+      "display": "Bereich"
     },
     {
-      "code": "L",
-      "display": "Lehre"      
+      "code": "ASR",
+      "display": "Aufsichtsrat"      
     },
     {
-      "code": "MLAB",
-      "display": "Medizinisches Labor"
+      "code": "VOR",
+      "display": "Vorstand"
     },
     {
       "code": "TLAB",
       "display": "Technisches Labor"
     },
     {
-      "code": "BIO",
-      "display": "Biobank"
+      "code": "STAB",
+      "display": "Stabsstelle"
     },
     {
-      "code": "TM",
-      "display": "Transfusionsmedizin"
+      "code": "ZEIN",
+      "display": "Zentrale Einrichtung "
     },
     {
-      "code": "DIZ",
-      "display": "Datenintegrationszentrum"
+      "code": "MVZ",
+      "display": "Medizinisches Versorgungszentrum"
     }
   ]
 }
