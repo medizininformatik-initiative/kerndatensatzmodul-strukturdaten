@@ -12,54 +12,58 @@
       {
         "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-strukturdaten/CodeSystem/Organisationstyp",
         "concept": [
-         {
-           "code": "KL",
-           "display": "Klinik"
-         },
-         {
-           "code": "KHS",
-           "display": "Krankenhausstandort"
-         },
-         {
-           "code": "Z",
-           "display": "Zentrum"
-         },
-         {
-           "code": "MVZ",
-           "display": "Medizinisches Versorgungszentrum"
-         },
-         {
-           "code": "V",
-           "display": "Verwaltung"
-         },
-         {
-           "code": "F",
-           "display": "Forschung"
-         },
-         {
-           "code": "L",
-           "display": "Lehre"      
-         },
-         {
-           "code": "MLAB",
-           "display": "Medizinisches Labor"
-         },
-         {
-           "code": "TLAB",
-           "display": "Technisches Labor"
-         },
-         {
-           "code": "BIO",
-           "display": "Biobank"
-         },
-         {
-           "code": "TM",
-           "display": "Transfusionsmedizin"
-         },
-         {
-           "code": "DIZ",
-           "display": "Datenintegrationszentrum"
-         }
+        {
+            "code": "DPT",
+            "display": "Department"
+          },
+          {
+            "code": "KLK",
+            "display": "Klinik"
+          },
+          {
+            "code": "PKL",
+            "display": "Polyklinik"
+          },
+          {
+            "code": "INS",
+            "display": "Institut"
+          },
+          {
+            "code": "ABT",
+            "display": "Abteilung"
+          },
+          {
+            "code": "SEK",
+            "display": "Sektion"
+          },
+          {
+            "code": "BER",
+            "display": "Bereich"
+          },
+          {
+            "code": "ASR",
+            "display": "Aufsichtsrat"      
+          },
+          {
+            "code": "VOR",
+            "display": "Vorstand"
+          },
+          {
+            "code": "TLAB",
+            "display": "Technisches Labor"
+          },
+          {
+            "code": "STAB",
+            "display": "Stabsstelle"
+          },
+          {
+            "code": "ZEIN",
+            "display": "Zentrale Einrichtung "
+          },
+          {
+            "code": "MVZ",
+            "display": "Medizinisches Versorgungszentrum"
+          }
         ]
       }
     ]
