@@ -1,0 +1,58 @@
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="ig-mii-struktur-version-1.0" />
+  <url value="https://www.medizininformatik-initiative.de/fhir/core/modul-struktur/ImplementationGuide/ig-version-1.0" />
+  <version value="1.0.0" />
+  <name value="[DE] Medizininformatik Initiative - Modul Strukturdaten - Implementierungsleitfaden - Version 1.0" />
+  <status value="active" />
+  <description value="[DE] Modul Strukturdaten - Version 1.0 - IG" />
+  <fhirVersion value="4.0.1" />
+  <definition>
+    <page>
+      <nameUrl value="ImplementationGuide-1.x/IGMIIKDSModulStruktur.md" />
+      <title value="IG MII KDS Modul Strukturdaten" />
+      <generation value="markdown" />
+      <page>
+        <nameUrl value="ImplementationGuide-1.x/BeschreibungModul.md" />
+        <title value="Beschreibung Modul" />
+        <generation value="markdown" />
+      </page>
+      <page>
+        <nameUrl value="ImplementationGuide-1.x/KontextimGesamtprojektBezgezuanderenModulen.md" />
+        <title value="Kontext im Gesamtprojekt / Bezüge zu anderen Modulen" />
+        <generation value="markdown" />
+      </page>
+      <page>
+        <nameUrl value="ImplementationGuide-1.x/Referenzen.md" />
+        <title value="Referenzen" />
+        <generation value="markdown" />
+      </page>
+      <page>
+        <nameUrl value="ImplementationGuide-1.x/AnwendungsflleInformationsmodell.md" />
+        <title value="Anwendungsfälle / Informationsmodell" />
+        <generation value="markdown" />
+        <page>
+          <nameUrl value="ImplementationGuide-1.x/BeschreibungvonSzenarienfrdieAnwendungderModule.md" />
+          <title value="Beschreibung von Szenarien für die Anwendung der Module" />
+          <generation value="markdown" />
+        </page>
+        <page>
+          <nameUrl value="ImplementationGuide-1.x/Datenstzeinkl.Beschreibungen.md" />
+          <title value="Datensätze inkl. Beschreibungen" />
+          <generation value="markdown" />
+        </page>
+        <page>
+          <nameUrl value="ImplementationGuide-1.x/UML.md" />
+          <title value="UML" />
+          <generation value="markdown" />
+        </page>
+      </page>
+      <page>
+        <nameUrl value="ImplementationGuide-1.x/TechnischeImplementierung/TechnischeImplementierung.md" />
+        <title value="Technische Implementierung" />
+        <generation value="markdown" />
+        <page>
+        </page>
+      </page>
+    </page>
+  </definition>
+</ImplementationGuide>
