@@ -1,0 +1,94 @@
+@startuml
+!theme toy
+class Organisation {
+	Organisationsidentifier : Identifier
+	Name : String
+	Webseite : url
+	partof : <<Organisation>>
+}
+
+
+class Abteilung {
+	Fachabteilungsschlüssel : Identifier
+	OE-Nummer : Integer
+	Name : String
+
+}
+
+class Versorgungsstelle {
+	Versorgungsstellenidentifikator : Identifier
+	Name : String
+}
+
+class Adresse {
+	Adresstyp : Code
+	Straße : String
+	Hausnummer : String
+	Postleitzahl : Integer
+	Ort : String
+	Bundesland : String
+	Geo.X-Koordinate : String
+	Geo.Y-Koordinate : String
+}
+
+class Krankenhaus {
+	Institutionskennzeichen : identifier
+	Name : String
+}
+
+class Träger {
+	Name : String
+	Art : Code
+}
+
+class Leitung {
+	Vorname : String
+	Nachname : String
+	Titel : String
+}
+
+class Ort {
+	Etage : String
+	Bezeichnung : String
+	partOf : <<Ort>>
+}
+Organisation <-- Leitung
+Leitung .. Leitungstyp
+Organisation <-- Träger
+Organisation <|-- Abteilung
+Organisation .. Organisationstyp
+Organisation - Adresse
+Organisation <|-- Versorgungsstelle
+Abteilung <|--|> Versorgungsstelle
+
+
+enum Organisationstyp {
+	Department
+	Klinik
+	Polyklinik
+	Institut
+	Abteilung
+	Sektion
+	Bereich
+	Aufsichtsrat
+	Vorstand
+	Technisches Labor
+	Stabsstelle
+	Zentrale Einrichtung
+	Medizinisches Versorgungszentrum
+}
+
+enum Ermächtigunggrundlage {
+	Plankrankenhaus
+	Hochschulklinik
+	versorgungsvertrag
+}
+
+enum Leitungstyp {
+	Medizinisch
+	Pflegerisch
+	Verwaltung
+}
+
+
+@enduml
