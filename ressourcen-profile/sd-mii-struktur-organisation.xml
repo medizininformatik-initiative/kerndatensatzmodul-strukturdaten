@@ -1,8 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <url value="https://www.medizininformatik-initiative.de/fhir/ext/modul-strukturdaten/StructureDefinition/Organisation" />
+  <id value="sd-mii-struktur-organisation" />
+  <url value="https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/StructureDefinition/organisation" />
   <version value="0.0.1" />
-  <name value="Organisation" />
+  <name value="SD_MII_Struktur_Organisation" />
+  <title value="SD MII Struktur Organisation" />
   <status value="draft" />
   <fhirVersion value="4.0.1" />
   <kind value="resource" />
@@ -13,16 +15,67 @@
   <differential>
     <element id="Organization.identifier">
       <path value="Organization.identifier" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
       <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Organization.identifier:Institutionskennzeichen">
+      <path value="Organization.identifier" />
+      <sliceName value="Institutionskennzeichen" />
       <max value="1" />
       <type>
         <code value="Identifier" />
         <profile value="http://fhir.de/StructureDefinition/identifier-iknr" />
       </type>
     </element>
+    <element id="Organization.identifier:Abteilungsidentifikator">
+      <path value="Organization.identifier" />
+      <sliceName value="Abteilungsidentifikator" />
+      <max value="1" />
+    </element>
+    <element id="Organization.identifier:Versorgungsstellenidentifikator">
+      <path value="Organization.identifier" />
+      <sliceName value="Versorgungsstellenidentifikator" />
+      <max value="1" />
+    </element>
     <element id="Organization.type">
       <path value="Organization.type" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
       <min value="1" />
+      <max value="1" />
+      <binding>
+        <strength value="extensible" />
+      </binding>
+    </element>
+    <element id="Organization.type:Organisationstyp">
+      <path value="Organization.type" />
+      <sliceName value="Organisationstyp" />
+      <max value="1" />
+      <binding>
+        <strength value="extensible" />
+        <valueSet value="https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/ValueSet/organisationstyp" />
+      </binding>
+    </element>
+    <element id="Organization.type:Abteilungstyp">
+      <path value="Organization.type" />
+      <sliceName value="Abteilungstyp" />
+      <max value="1" />
+    </element>
+    <element id="Organization.type:Versorgungsstufe">
+      <path value="Organization.type" />
+      <sliceName value="Versorgungsstufe" />
       <max value="1" />
     </element>
     <element id="Organization.name">
@@ -57,7 +110,7 @@
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization" />
-        <targetProfile value="https://www.medizininformatik-initiative.de/fhir/ext/modul-strukturdaten/StructureDefinition/Organisation" />
+        <targetProfile value="https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/StructureDefinition/organisation" />
       </type>
     </element>
   </differential>

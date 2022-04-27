@@ -1,8 +1,10 @@
 {
   "resourceType": "ValueSet",
-  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-strukturdaten/ValueSet/Organisationstyp",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/ValueSet/organisationstyp",
+  "id": "vs-mii-struktur-organisationstyp",
   "version": "0.0.1",
-  "name": "Organisationstyp",
+  "title": "VS MII Struktur Organisationstyp",
+  "name": "VS_MII_Struktur_Organisationstyp",
   "status": "draft",
   "experimental": false,
   "publisher": "Medizininformatik Initiative",

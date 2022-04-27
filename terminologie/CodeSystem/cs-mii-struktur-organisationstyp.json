@@ -1,14 +1,20 @@
 {
   "resourceType": "CodeSystem",
-  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-strukturdaten/CodeSystem/Organisationstyp",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/CodeSystem/organisationstyp",
+  "id": "cs-mii-struktur-organisationstyp",
   "version": "0.0.1",
-  "name": "Organisationstyp",
+  "title": "CS MII Struktur Organisationstyp",
+  "name": "CS_MII_Struktur_Organisationstyp",
   "status": "draft",
   "experimental": false,
   "publisher": "Medizininformatik Initiative",
   "description": "Organisationstyp",
   "content": "complete",
   "concept": [
+    {
+      "code": "KHS",
+      "display": "Krankenhaus"
+    },
     {
       "code": "DPT",
       "display": "Department"
