@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="sd-mii-struktur-location" />
   <url value="https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/StructureDefinition/location" />
   <name value="SD_MII_Struktur_Location" />
+  <title value="SD MII Struktur Location" />
   <status value="draft" />
   <fhirVersion value="4.0.1" />
   <kind value="resource" />
