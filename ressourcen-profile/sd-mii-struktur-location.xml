@@ -12,6 +12,26 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Location" />
   <derivation value="constraint" />
   <differential>
+    <element id="Location.identifier">
+      <path value="Location.identifier" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Location.name">
+      <path value="Location.name" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Location.mode">
+      <path value="Location.mode" />
+      <min value="1" />
+      <fixedCode value="instance" />
+      <mustSupport value="false" />
+    </element>
+    <element id="Location.physicalType">
+      <path value="Location.physicalType" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
     <element id="Location.managingOrganization">
       <path value="Location.managingOrganization" />
       <min value="1" />
@@ -20,6 +40,15 @@
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization" />
         <targetProfile value="https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/StructureDefinition/organisation" />
       </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Location.partOf">
+      <path value="Location.partOf" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Location.availabilityExceptions">
+      <path value="Location.availabilityExceptions" />
+      <definition value="A description of when the locations opening hours are different to normal, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as detailed in the opening hours Times." />
     </element>
   </differential>
 </StructureDefinition>
