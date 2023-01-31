@@ -1,0 +1,197 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "sd-mii-struktur-organisation",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Base.Entities"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "business"
+    }
+  ],
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/StructureDefinition/organisation",
+  "version": "0.0.1",
+  "name": "SD_MII_Struktur_Organisation",
+  "title": "SD MII Struktur Organisation",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "servd",
+      "uri": "http://www.omg.org/spec/ServD/1.0/",
+      "name": "ServD"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Organization",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Organization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Organization.identifier",
+        "path": "Organization.identifier",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:Institutionskennzeichen",
+        "path": "Organization.identifier",
+        "sliceName": "Institutionskennzeichen",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://fhir.de/StructureDefinition/identifier-iknr"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Organization.identifier:Abteilungsidentifikator",
+        "path": "Organization.identifier",
+        "sliceName": "Abteilungsidentifikator",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Organization.identifier:Versorgungsstellenidentifikator",
+        "path": "Organization.identifier",
+        "sliceName": "Versorgungsstellenidentifikator",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Organization.type",
+        "path": "Organization.type",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "max": "1",
+        "binding": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "OrganizationType"
+            }
+          ],
+          "strength": "extensible",
+          "description": "Used to categorize the organization.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/organization-type"
+        }
+      },
+      {
+        "id": "Organization.type:Organisationstyp",
+        "path": "Organization.type",
+        "sliceName": "Organisationstyp",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/ValueSet/organisationstyp"
+        }
+      },
+      {
+        "id": "Organization.type:Abteilungstyp",
+        "path": "Organization.type",
+        "sliceName": "Abteilungstyp",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Organization.type:Versorgungsstufe",
+        "path": "Organization.type",
+        "sliceName": "Versorgungsstufe",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Organization.name",
+        "path": "Organization.name",
+        "min": 1
+      },
+      {
+        "id": "Organization.alias",
+        "path": "Organization.alias",
+        "comment": "There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the organization.\r\n\r\n- Kürzel der Universitätsklinika"
+      },
+      {
+        "id": "Organization.telecom",
+        "path": "Organization.telecom",
+        "max": "1"
+      },
+      {
+        "id": "Organization.telecom.value",
+        "path": "Organization.telecom.value",
+        "comment": "Additional text data such as phone extension numbers, or notes about use of the contact are sometimes included in the value.\r\n\r\n- Webseite der Organization"
+      },
+      {
+        "id": "Organization.address",
+        "path": "Organization.address",
+        "type": [
+          {
+            "code": "Address",
+            "profile": [
+              "http://fhir.de/StructureDefinition/address-de-basis"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Organization.partOf",
+        "path": "Organization.partOf",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Organization",
+              "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/StructureDefinition/organisation"
+            ],
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy",
+                "valueBoolean": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

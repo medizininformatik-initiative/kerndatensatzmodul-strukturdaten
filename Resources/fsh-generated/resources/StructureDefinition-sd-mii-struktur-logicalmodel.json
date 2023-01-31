@@ -1,0 +1,868 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "sd-mii-struktur-logicalmodel",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/StructureDefinition/sd-mii-struktur-logicalmodel",
+  "version": "0.1.0",
+  "name": "SD_MII_Struktur_LogicalModel",
+  "title": "SD MII Struktur Logical Model",
+  "status": "draft",
+  "description": "Logische Repräsentation des Erweiterungsmoduls Strukturdaten",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "logical",
+  "abstract": false,
+  "type": "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/StructureDefinition/sd-mii-struktur-logicalmodel",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "sd-mii-struktur-logicalmodel",
+        "path": "sd-mii-struktur-logicalmodel",
+        "short": "SD MII Struktur Logical Model",
+        "definition": "Logische Repräsentation des Erweiterungsmoduls Strukturdaten"
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus",
+        "short": "Ein zugelassenes Krankenhaus",
+        "definition": "Ein nach §108 SGB V zugelassenes Krankenhaus.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Institutionskennzeichen",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Institutionskennzeichen",
+        "short": "Institutionskennzeichen",
+        "definition": "Das bundesweit eindeutige, neunstellige Institutionskennzeichen des Krankenhauses gemäß §293 SGB V.",
+        "alias": [
+          "IK-Nummer",
+          "Haupt-IK",
+          "IK-Nr"
+        ],
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://fhir.de/StructureDefinition/identifier-iknr"
+            ]
+          }
+        ],
+        "example": [
+          {
+            "label": "Universitätsklinikum Leipzig AöR",
+            "valueIdentifier": {
+              "use": "official",
+              "type": {
+                "text": "261401052"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Name",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Name",
+        "short": "Krankenhausname",
+        "definition": "Der Name des Krankenhauses.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "example": [
+          {
+            "label": "Immanuel Krankenhaus Berlin",
+            "valueString": "Immanuel Krankenhaus Berlin"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Ermaechtigungsgrundlage",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Ermaechtigungsgrundlage",
+        "short": "Ermächtigungsgrundlage",
+        "definition": "Die nach §108 SGB V definierten Ermächtigungsgrundlagen für zugelassene Krankenhäuser. (Hochschulklinik | Plankrankenhaus | Versorungsvertrag)",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "example": [
+          {
+            "label": "Ermächtigungsgrundlage",
+            "valueCode": "Versorgungsvertrag"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Leitung",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Leitung",
+        "short": "Die Leitung des Krankenhauses.",
+        "definition": "Die Leitung des Krankenhauses.",
+        "min": 1,
+        "max": "3",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Leitung.Rolle",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Leitung.Rolle",
+        "short": "Der Leitungstyp (Medizinisch | Pflegerisch | Verwaltend).",
+        "definition": "Der Leitungstyp (Medizinisch | Pflegerisch | Verwaltend).",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/PractitionerRole"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Leitung.Person",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Leitung.Person",
+        "short": "Referenz zur Organisationsleitung",
+        "definition": "Referenz zur Organisationsleitung",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Practitioner"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Traeger",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Traeger",
+        "short": "Trägerschaft des Krankenhauses",
+        "definition": "Trägerschaft des Krankenhauses",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Traeger.Art",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Traeger.Art",
+        "short": "Die Art der Trägerschaft des Krankenhauses. (öffentlich | privat | freigemeinnützig)",
+        "definition": "Die Art der Trägerschaft des Krankenhauses. (öffentlich | privat | freigemeinnützig)",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Traeger.Name",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Traeger.Name",
+        "short": "Der Name des Trägers.",
+        "definition": "Der Name des Trägers.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Adresse",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Adresse",
+        "short": "Adresse",
+        "definition": "Die Adressen des Krankenhauses, unterschieden nach postalischer und physischer Adresse.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Adresse.Postalisch",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Adresse.Postalisch",
+        "short": "Postalische Adresse",
+        "definition": "Die postalische Adresse des Krankenhauses.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Address"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Adresse.Physisch",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Adresse.Physisch",
+        "short": "Physische Adresse",
+        "definition": "Die physische Adresse des Krankenhauses, an welchem sich der Zugang befindet.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Address"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation",
+        "short": "Standort",
+        "definition": "Struktur- und Leistungsdaten der Standorte.",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Organisationsidentifikator",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Organisationsidentifikator",
+        "short": "Organisationsidentifikator",
+        "definition": "Organisationsidentifikator",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.isPartOf",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.isPartOf",
+        "short": "Referenz zur drüber stehenden Organisation",
+        "definition": "Referenz zur drüber stehenden Organisation",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Organisationstyp",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Organisationstyp",
+        "short": "(Krankenhausstandort | Zentrum | MVZ | Forschung & Lehre | Verwaltung | Sozialdienst/Seelsorge | Patienten- und Besucherservice | Medizinisches Labor | Technisches Labor | Biobank | Transfusionsmedizin)",
+        "definition": "(Krankenhausstandort | Zentrum | MVZ | Forschung & Lehre | Verwaltung | Sozialdienst/Seelsorge | Patienten- und Besucherservice | Medizinisches Labor | Technisches Labor | Biobank | Transfusionsmedizin)",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Name",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Name",
+        "short": "Name",
+        "definition": "Der Name der Organisation.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Leitung",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Leitung",
+        "short": "Leitung der Organisation",
+        "definition": "Leitung der Organisation",
+        "min": 1,
+        "max": "3",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Leitung.Rolle",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Leitung.Rolle",
+        "short": "Der Leitungstyp (Medizinisch | Pflegerisch | Verwaltend).",
+        "definition": "Der Leitungstyp (Medizinisch | Pflegerisch | Verwaltend).",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/PractitionerRole"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Leitung.Person",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Leitung.Person",
+        "short": "Referenz zur Organisationsleitung",
+        "definition": "Referenz zur Organisationsleitung",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Practitioner"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Webseite",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Webseite",
+        "short": "Organisationswebsite",
+        "definition": "Organisationswebsite",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Bettenanzahl",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Bettenanzahl",
+        "short": "Bettenanzahl in der Organisation",
+        "definition": "Bettenanzahl in der Organisation",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Fallzahlen",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Fallzahlen",
+        "short": "Fallzahlen",
+        "definition": "Die aggregierten Fallzahlen eines Krankenhausstandortes. Die Angabe des Elements ist nur zulässig, wenn die Organisation eines Organisationstyps Fallzahlen erhebt.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Fallzahlen.Ambulant",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Fallzahlen.Ambulant",
+        "short": "davon ambulant..",
+        "definition": "davon ambulant..",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Fallzahlen.Stationaer",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Fallzahlen.Stationaer",
+        "short": "davon stationär..",
+        "definition": "davon stationär..",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Fallzahlen.Teilstationaer",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Fallzahlen.Teilstationaer",
+        "short": "davon teilstationär..",
+        "definition": "davon teilstationär..",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Adresse",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Adresse",
+        "short": "Adresse der Organisation",
+        "definition": "Adresse der Organisation",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Adresse.Postalisch",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Adresse.Postalisch",
+        "short": "Postalische Adresse der Organisation",
+        "definition": "Postalische Adresse der Organisation",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Address"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Adresse.Physisch",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Adresse.Physisch",
+        "short": "Physische Adresse der Organisation",
+        "definition": "Physische Adresse der Organisation",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Address"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung",
+        "short": "Abteilung",
+        "definition": "Abteilung",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Fachabteilungsschluessel",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Fachabteilungsschluessel",
+        "short": "Fachabteilungsschlüssel",
+        "definition": "Fachabteilungsschlüssel",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.OE-Nummer",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.OE-Nummer",
+        "short": "Nummer der Organisationseinheit",
+        "definition": "Nummer der Organisationseinheit",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Name",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Name",
+        "short": "Name der Abteilung",
+        "definition": "Name der Abteilung",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Abteilungstyp",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Abteilungstyp",
+        "short": "Abteilungstyp",
+        "definition": "(medizinisch | pflegerisch | therapeutisch | diagnostisch | verwaltend | standard)",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Versorgungsstufe",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Versorgungsstufe",
+        "short": "Versorgungsstufe",
+        "definition": "(stationär | ambulant | vorstationär | teilstationär | nachstationär)",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Ort",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Ort",
+        "short": "Ort",
+        "definition": "Ort",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Ort.Name",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Ort.Name",
+        "short": "Name",
+        "definition": "Name",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Ort.isPartOf",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Ort.isPartOf",
+        "short": "Location",
+        "definition": "Location",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Location"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Ort.Typ",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Ort.Typ",
+        "short": "(Raum | Flur | Bett)",
+        "definition": "(Raum | Flur | Bett)",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Diagnose",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Diagnose",
+        "short": "Diagnose",
+        "definition": "Diagnose",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Diagnose.ICD10_Code",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Diagnose.ICD10_Code",
+        "short": "tmp",
+        "definition": "tmp",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Diagnose.Anzahl",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Diagnose.Anzahl",
+        "short": "tmp",
+        "definition": "tmp",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Prozedur",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Prozedur",
+        "short": "tmp",
+        "definition": "tmp",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Prozedur.OPS_Code",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Prozedur.OPS_Code",
+        "short": "tmp",
+        "definition": "tmp",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Prozedur.Anzahl",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Prozedur.Anzahl",
+        "short": "tmp",
+        "definition": "tmp",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Fallzahlen_OE",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Fallzahlen_OE",
+        "short": "Fallzahlen der Organisationseinheit",
+        "definition": "Fallzahlen der Organisationseinheit",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Fallzahlen_OE.Ambulant",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Fallzahlen_OE.Ambulant",
+        "short": "davon ambulant..",
+        "definition": "davon ambulant..",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Fallzahlen_OE.Stationaer",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Fallzahlen_OE.Stationaer",
+        "short": "davon stationär..",
+        "definition": "davon stationär..",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Fallzahlen_OE.Teilstationaer",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Abteilung.Fallzahlen_OE.Teilstationaer",
+        "short": "davon teilstationär..",
+        "definition": "davon teilstationär..",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Versorgungsstelle",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Versorgungsstelle",
+        "short": "Versorgungsstelle",
+        "definition": "Versorgungsstelle",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Versorgungsstelle.Versorgungsstellenidentifikator",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Versorgungsstelle.Versorgungsstellenidentifikator",
+        "short": "tmp",
+        "definition": "tmp",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Versorgungsstelle.Name",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Versorgungsstelle.Name",
+        "short": "tmp",
+        "definition": "tmp",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Versorgungsstelle.partOf",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Versorgungsstelle.partOf",
+        "short": "Wenn die Versorgungsstelle Teil einer Abteilung ist, wird es hier angegeben.",
+        "definition": "Wenn die Versorgungsstelle Teil einer Abteilung ist, wird es hier angegeben.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Versorgungsstelle.Abteilungsstyp",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Versorgungsstelle.Abteilungsstyp",
+        "short": "(medizinisch | pflegerisch | therapeutisch | diagnostisch)",
+        "definition": "(medizinisch | pflegerisch | therapeutisch | diagnostisch)",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Versorgungsstelle.Versorgungsstufe",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Versorgungsstelle.Versorgungsstufe",
+        "short": "(stationär | ambulant | vorstationär | teilstationär | nachstationär)",
+        "definition": "(stationär | ambulant | vorstationär | teilstationär | nachstationär)",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Versorgungsstelle.Ort",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Versorgungsstelle.Ort",
+        "short": "tmp",
+        "definition": "tmp",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Versorgungsstelle.Ort.Name",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Versorgungsstelle.Ort.Name",
+        "short": "tmp",
+        "definition": "tmp",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Versorgungsstelle.Ort.isPartOf",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Versorgungsstelle.Ort.isPartOf",
+        "short": "tmp",
+        "definition": "tmp",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Location"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Versorgungsstelle.Ort.Typ",
+        "path": "sd-mii-struktur-logicalmodel.Krankenhaus.Organisation.Versorgungsstelle.Ort.Typ",
+        "short": "tmp",
+        "definition": "tmp",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/ValueSet"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
