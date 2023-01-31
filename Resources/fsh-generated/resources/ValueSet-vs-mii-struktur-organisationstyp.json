@@ -1,0 +1,71 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "VS_MII_Struktur_Organisationstyp",
+  "id": "vs-mii-struktur-organisationstyp",
+  "title": "VS MII Struktur Organisationstyp",
+  "description": "Organisationstyp",
+  "version": "0.1.0",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/ValueSet/vs-mii-struktur-organisationstyp",
+  "compose": {
+    "include": [
+      {
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-strukturdaten/CodeSystem/Organisationstyp",
+        "concept": [
+          {
+            "code": "DPT",
+            "display": "Department"
+          },
+          {
+            "code": "KLK",
+            "display": "Klinik"
+          },
+          {
+            "code": "PKL",
+            "display": "Polyklinik"
+          },
+          {
+            "code": "INS",
+            "display": "Institut"
+          },
+          {
+            "code": "ABT",
+            "display": "Abteilung"
+          },
+          {
+            "code": "SEK",
+            "display": "Sektion"
+          },
+          {
+            "code": "BER",
+            "display": "Bereich"
+          },
+          {
+            "code": "ASR",
+            "display": "Aufsichtsrat"
+          },
+          {
+            "code": "VOR",
+            "display": "Vorstand"
+          },
+          {
+            "code": "TLAB",
+            "display": "Technisches Labor"
+          },
+          {
+            "code": "STAB",
+            "display": "Stabsstelle"
+          },
+          {
+            "code": "ZEIN",
+            "display": "Zentrale Einrichtung "
+          },
+          {
+            "code": "MVZ",
+            "display": "Medizinisches Versorgungszentrum"
+          }
+        ]
+      }
+    ]
+  }
+}

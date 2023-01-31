@@ -1,0 +1,109 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "kerndatensatzmodul-strukturdaten",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/ImplementationGuide/kerndatensatzmodul-strukturdaten",
+  "version": "0.1.0",
+  "name": "kerndatensatzmodulstrukturdaten",
+  "status": "draft",
+  "publisher": "Medizininformatik-Initiative",
+  "contact": [
+    {
+      "name": "Medizininformatik-Initiative",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.medizininformatik-initiative.de/"
+        }
+      ]
+    }
+  ],
+  "packageId": "kerndatensatzmodul-strukturdaten",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "dependsOn": [
+    {
+      "packageId": "de.basisprofil.r4",
+      "uri": "de.basisprofil.r4",
+      "version": "1.4.0",
+      "id": "de_basisprofil_r4"
+    },
+    {
+      "packageId": "de.medizininformatikinitiative.kerndatensatz.meta",
+      "uri": "https://simplifier.net/guide/medizininformatikinitiative-implementationguide-manteldokument",
+      "version": "1.0.3",
+      "id": "de_medizininformatikinitiative_kerndatensatz_meta"
+    }
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/sd-mii-struktur-location"
+        },
+        "name": "SD MII Struktur Location",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/sd-mii-struktur-organisation"
+        },
+        "name": "SD MII Struktur Organisation",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ex-mii-struktur-part-of"
+        },
+        "name": "EX_MII_Struktur_PartOf",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/sd-mii-struktur-logicalmodel"
+        },
+        "name": "SD MII Struktur Logical Model",
+        "description": "Logische Repräsentation des Erweiterungsmoduls Strukturdaten",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/vs-mii-struktur-organisationstyp"
+        },
+        "name": "VS MII Struktur Organisationstyp",
+        "description": "Organisationstyp",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/cs-mii-struktur-organisationstyp"
+        },
+        "name": "CS MII Struktur Organisationstyp",
+        "description": "Organisationstyp",
+        "exampleBoolean": false
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "Home",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2023+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "ci-build"
+      }
+    ]
+  }
+}
