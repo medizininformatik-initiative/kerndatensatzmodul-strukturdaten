@@ -15,7 +15,7 @@ Title: "SD MII Struktur Organisation"
     Versorgungsstellenidentifikator 0..1
 * identifier[Institutionskennzeichen] only $identifier-iknr
 * type 1..1
-* type ^slicing.discriminator.type = #type
+* type ^slicing.discriminator.type = #pattern
 * type ^slicing.discriminator.path = "$this"
 * type ^slicing.rules = #open
 * type ^binding.strength = #extensible

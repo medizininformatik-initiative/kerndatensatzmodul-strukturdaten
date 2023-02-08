@@ -96,7 +96,7 @@
         "slicing": {
           "discriminator": [
             {
-              "type": "type",
+              "type": "pattern",
               "path": "$this"
             }
           ],
