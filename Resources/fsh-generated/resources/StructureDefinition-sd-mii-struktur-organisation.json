@@ -52,7 +52,7 @@
         "slicing": {
           "discriminator": [
             {
-              "type": "type",
+              "type": "pattern",
               "path": "$this"
             }
           ],
@@ -75,20 +75,6 @@
             ]
           }
         ]
-      },
-      {
-        "id": "Organization.identifier:Abteilungsidentifikator",
-        "path": "Organization.identifier",
-        "sliceName": "Abteilungsidentifikator",
-        "min": 0,
-        "max": "1"
-      },
-      {
-        "id": "Organization.identifier:Versorgungsstellenidentifikator",
-        "path": "Organization.identifier",
-        "sliceName": "Versorgungsstellenidentifikator",
-        "min": 0,
-        "max": "1"
       },
       {
         "id": "Organization.type",
@@ -126,20 +112,6 @@
           "strength": "extensible",
           "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/ValueSet/organisationstyp"
         }
-      },
-      {
-        "id": "Organization.type:Abteilungstyp",
-        "path": "Organization.type",
-        "sliceName": "Abteilungstyp",
-        "min": 0,
-        "max": "1"
-      },
-      {
-        "id": "Organization.type:Versorgungsstufe",
-        "path": "Organization.type",
-        "sliceName": "Versorgungsstufe",
-        "min": 0,
-        "max": "1"
       },
       {
         "id": "Organization.name",
