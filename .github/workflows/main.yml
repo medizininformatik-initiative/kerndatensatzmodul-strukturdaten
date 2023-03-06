@@ -33,7 +33,6 @@ jobs:
         uses: FirelyTeam/firely-terminal-pipeline@v0.3.2
         with:
           PATH_TO_CONFORMANCE_RESOURCES: Resources/fsh-generated/resources 
-          PATH_TO_EXAMPLES: beispiele
           PATH_TO_QUALITY_CONTROL_RULES: qc/custom
           DOTNET_VALIDATION_ENABLED: true
           JAVA_VALIDATION_ENABLED: true
