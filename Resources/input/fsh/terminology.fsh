@@ -23,16 +23,4 @@ Id: vs-mii-struktur-organisationstyp
 Title: "VS MII Struktur Organisationstyp"
 Description: "Organisationstyp"
 * ^status = #draft
-* $cs-organisationstyp#DPT "Department"
-* $cs-organisationstyp#KLK "Klinik"
-* $cs-organisationstyp#PKL "Polyklinik"
-* $cs-organisationstyp#INS "Institut"
-* $cs-organisationstyp#ABT "Abteilung"
-* $cs-organisationstyp#SEK "Sektion"
-* $cs-organisationstyp#BER "Bereich"
-* $cs-organisationstyp#ASR "Aufsichtsrat"
-* $cs-organisationstyp#VOR "Vorstand"
-* $cs-organisationstyp#TLAB "Technisches Labor"
-* $cs-organisationstyp#STAB "Stabsstelle"
-* $cs-organisationstyp#ZEIN "Zentrale Einrichtung "
-* $cs-organisationstyp#MVZ "Medizinisches Versorgungszentrum"
+* include codes from system cs-mii-struktur-organisationstyp
