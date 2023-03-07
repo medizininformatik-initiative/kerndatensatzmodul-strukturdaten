@@ -55,6 +55,19 @@
         "mustSupport": false
       },
       {
+        "id": "Location.address",
+        "path": "Location.address",
+        "type": [
+          {
+            "code": "Address",
+            "profile": [
+              "http://fhir.de/StructureDefinition/address-de-basis"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
         "id": "Location.physicalType",
         "path": "Location.physicalType",
         "min": 1,

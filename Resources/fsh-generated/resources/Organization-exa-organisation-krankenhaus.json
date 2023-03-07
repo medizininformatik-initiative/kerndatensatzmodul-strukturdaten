@@ -1,0 +1,47 @@
+{
+  "resourceType": "Organization",
+  "id": "exa-organisation-krankenhaus",
+  "meta": {
+    "profile": [
+      "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/StructureDefinition/organisation"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://fhir.de/sid/arge-ik/iknr",
+      "value": "261401052"
+    }
+  ],
+  "address": [
+    {
+      "city": "Leipzig",
+      "postalCode": "04103",
+      "country": "DE",
+      "_line": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+              "valueString": "Liebigstraße"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+              "valueString": "20"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "KHS",
+          "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-strukturdaten/CodeSystem/Organisationstyp"
+        }
+      ]
+    }
+  ],
+  "name": "Universitätsklinikum Leipzig"
+}

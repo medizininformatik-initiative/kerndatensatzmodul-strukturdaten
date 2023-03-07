@@ -81,6 +81,22 @@
         "name": "CS MII Struktur Organisationstyp",
         "description": "Organisationstyp",
         "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Organization/exa-organisation-krankenhaus"
+        },
+        "name": "Beispiel Krankenhaus",
+        "description": "Beispiel Krankenhaus Universitätsklinikum Leipzig",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/StructureDefinition/organisation"
+      },
+      {
+        "reference": {
+          "reference": "Location/exa-organisation-standort"
+        },
+        "name": "exa-organisation-standort",
+        "description": "Beispiel Standort Leipzig",
+        "exampleCanonical": "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/StructureDefinition/location"
       }
     ],
     "page": {
