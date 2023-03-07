@@ -2,12 +2,12 @@
   "resourceType": "CodeSystem",
   "status": "draft",
   "content": "complete",
-  "name": "CS_MII_Struktur_Organisationstyp",
-  "id": "cs-mii-struktur-organisationstyp",
-  "title": "CS MII Struktur Organisationstyp",
+  "name": "MII_CS_Struktur_Organisationstyp",
+  "id": "mii-cs-struktur-organisationstyp",
+  "title": "MII CS Struktur Organisationstyp",
   "description": "Organisationstyp",
   "version": "0.1.0",
-  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/CodeSystem/cs-mii-struktur-organisationstyp",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/CodeSystem/mii-cs-struktur-organisationstyp",
   "concept": [
     {
       "code": "KHS",

@@ -39,16 +39,24 @@
     "resource": [
       {
         "reference": {
-          "reference": "StructureDefinition/sd-mii-struktur-location"
+          "reference": "StructureDefinition/mii-pr-struktur-abteilung"
         },
-        "name": "SD MII Struktur Location",
+        "name": "MII PR Struktur Abteilung",
+        "description": "Profil für eine Abteilung",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "StructureDefinition/sd-mii-struktur-organisation"
+          "reference": "StructureDefinition/mii-pr-struktur-location"
         },
-        "name": "SD MII Struktur Organisation",
+        "name": "MII PR Struktur Location",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mii-pr-struktur-organisation"
+        },
+        "name": "MII PR Struktur Organisation",
         "exampleBoolean": false
       },
       {
@@ -68,23 +76,23 @@
       },
       {
         "reference": {
-          "reference": "ValueSet/vs-mii-struktur-organisationstyp"
+          "reference": "ValueSet/mii-vs-struktur-organisationstyp"
         },
-        "name": "VS MII Struktur Organisationstyp",
+        "name": "MII VS Struktur Organisationstyp",
         "description": "Organisationstyp",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "CodeSystem/cs-mii-struktur-organisationstyp"
+          "reference": "CodeSystem/mii-cs-struktur-organisationstyp"
         },
-        "name": "CS MII Struktur Organisationstyp",
+        "name": "MII CS Struktur Organisationstyp",
         "description": "Organisationstyp",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "Organization/exa-organisation-krankenhaus"
+          "reference": "Organization/mii-exa-organisation-krankenhaus"
         },
         "name": "Beispiel Krankenhaus",
         "description": "Beispiel Krankenhaus Universitätsklinikum Leipzig",
@@ -92,7 +100,7 @@
       },
       {
         "reference": {
-          "reference": "Location/exa-organisation-standort"
+          "reference": "Location/mii-exa-organisation-standort"
         },
         "name": "exa-organisation-standort",
         "description": "Beispiel Standort Leipzig",

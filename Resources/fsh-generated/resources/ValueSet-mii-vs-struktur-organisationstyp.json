@@ -1,0 +1,17 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "MII_VS_Struktur_Organisationstyp",
+  "id": "mii-vs-struktur-organisationstyp",
+  "title": "MII VS Struktur Organisationstyp",
+  "description": "Organisationstyp",
+  "version": "0.1.0",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/ValueSet/mii-vs-struktur-organisationstyp",
+  "compose": {
+    "include": [
+      {
+        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/CodeSystem/mii-cs-struktur-organisationstyp"
+      }
+    ]
+  }
+}

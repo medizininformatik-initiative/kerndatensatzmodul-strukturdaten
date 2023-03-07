@@ -1,6 +1,6 @@
 {
   "resourceType": "Organization",
-  "id": "exa-organisation-krankenhaus",
+  "id": "mii-exa-organisation-krankenhaus",
   "meta": {
     "profile": [
       "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/StructureDefinition/organisation"
@@ -38,7 +38,7 @@
       "coding": [
         {
           "code": "KHS",
-          "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-strukturdaten/CodeSystem/Organisationstyp"
+          "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/CodeSystem/cs-mii-struktur-organisationstyp"
         }
       ]
     }
