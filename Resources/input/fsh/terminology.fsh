@@ -1,6 +1,6 @@
-CodeSystem: CS_MII_Struktur_Organisationstyp
-Id: cs-mii-struktur-organisationstyp
-Title: "CS MII Struktur Organisationstyp"
+CodeSystem: MII_CS_Struktur_Organisationstyp
+Id: mii-cs-struktur-organisationstyp
+Title: "MII CS Struktur Organisationstyp"
 Description: "Organisationstyp"
 * ^status = #draft
 * #KHS "Krankenhaus"
@@ -18,9 +18,9 @@ Description: "Organisationstyp"
 * #ZEIN "Zentrale Einrichtung "
 * #MVZ "Medizinisches Versorgungszentrum"
 
-ValueSet: VS_MII_Struktur_Organisationstyp
-Id: vs-mii-struktur-organisationstyp
-Title: "VS MII Struktur Organisationstyp"
+ValueSet: MII_VS_Struktur_Organisationstyp
+Id: mii-vs-struktur-organisationstyp
+Title: "MII VS Struktur Organisationstyp"
 Description: "Organisationstyp"
 * ^status = #draft
-* include codes from system cs-mii-struktur-organisationstyp
+* include codes from system mii-cs-struktur-organisationstyp

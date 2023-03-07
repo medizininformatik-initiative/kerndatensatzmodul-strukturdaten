@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "sd-mii-struktur-location",
+  "id": "mii-pr-struktur-location",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
@@ -13,8 +13,8 @@
   ],
   "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/StructureDefinition/location",
   "version": "0.1.0",
-  "name": "SD_MII_Struktur_Location",
-  "title": "SD MII Struktur Location",
+  "name": "MII_PR_Struktur_Location",
+  "title": "MII PR Struktur Location",
   "status": "draft",
   "fhirVersion": "4.0.1",
   "mapping": [
@@ -52,7 +52,7 @@
         "path": "Location.mode",
         "min": 1,
         "fixedCode": "instance",
-        "mustSupport": false
+        "mustSupport": true
       },
       {
         "id": "Location.address",
@@ -77,15 +77,6 @@
         "id": "Location.managingOrganization",
         "path": "Location.managingOrganization",
         "min": 1,
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Organization",
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/StructureDefinition/organisation"
-            ]
-          }
-        ],
         "mustSupport": true
       },
       {

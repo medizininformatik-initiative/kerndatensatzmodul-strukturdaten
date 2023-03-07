@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "sd-mii-struktur-organisation",
+  "id": "mii-pr-struktur-abteilung",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
@@ -11,11 +11,12 @@
       "valueCode": "business"
     }
   ],
-  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/StructureDefinition/organisation",
-  "version": "0.0.1",
-  "name": "SD_MII_Struktur_Organisation",
-  "title": "SD MII Struktur Organisation",
-  "status": "draft",
+  "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/StructureDefinition/mii-pr-struktur-abteilung",
+  "version": "0.1.0",
+  "name": "MII_PR_Struktur_Abteilung",
+  "title": "MII PR Struktur Abteilung",
+  "status": "active",
+  "description": "Profil für eine Abteilung",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -58,24 +59,27 @@
           ],
           "rules": "open"
         },
-        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.identifier:Abteilungsidentifikator",
+        "path": "Organization.identifier",
+        "sliceName": "Abteilungsidentifikator",
+        "min": 0,
         "max": "1",
         "mustSupport": true
       },
       {
-        "id": "Organization.identifier:Institutionskennzeichen",
-        "path": "Organization.identifier",
-        "sliceName": "Institutionskennzeichen",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Identifier",
-            "profile": [
-              "http://fhir.de/StructureDefinition/identifier-iknr"
-            ]
-          }
-        ]
+        "id": "Organization.identifier:Abteilungsidentifikator.system",
+        "path": "Organization.identifier.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.identifier:Abteilungsidentifikator.value",
+        "path": "Organization.identifier.value",
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "Organization.type",
@@ -87,33 +91,61 @@
               "path": "$this"
             }
           ],
-          "rules": "open"
-        },
-        "min": 1,
-        "mustSupport": true,
-        "binding": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
-              "valueString": "OrganizationType"
-            }
-          ],
-          "strength": "extensible",
-          "description": "Used to categorize the organization.",
-          "valueSet": "http://hl7.org/fhir/ValueSet/organization-type"
+          "rules": "open",
+          "ordered": false
         }
       },
       {
-        "id": "Organization.type:Organisationstyp",
+        "id": "Organization.type:organisationstyp",
         "path": "Organization.type",
-        "sliceName": "Organisationstyp",
+        "sliceName": "organisationstyp",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.type:organisationstyp.coding",
+        "path": "Organization.type.coding",
+        "patternCoding": {
+          "code": "dept",
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type"
+        }
+      },
+      {
+        "id": "Organization.type:organisationstyp.coding.system",
+        "path": "Organization.type.coding.system",
         "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.type:organisationstyp.coding.code",
+        "path": "Organization.type.coding.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.type:fachabteilungsschluessel",
+        "path": "Organization.type",
+        "sliceName": "fachabteilungsschluessel",
+        "min": 0,
         "max": "1",
         "mustSupport": true,
         "binding": {
-          "strength": "extensible",
-          "valueSet": "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/ValueSet/organisationstyp"
+          "strength": "required",
+          "valueSet": "http://fhir.de/ValueSet/dkgev/Fachabteilungsschluessel-erweitert"
         }
+      },
+      {
+        "id": "Organization.type:fachabteilungsschluessel.coding.system",
+        "path": "Organization.type.coding.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.type:fachabteilungsschluessel.coding.code",
+        "path": "Organization.type.coding.code",
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "Organization.name",
@@ -149,25 +181,6 @@
           }
         ],
         "mustSupport": true
-      },
-      {
-        "id": "Organization.partOf",
-        "path": "Organization.partOf",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/Organization",
-              "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/StructureDefinition/organisation"
-            ],
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy",
-                "valueBoolean": true
-              }
-            ]
-          }
-        ]
       }
     ]
   }

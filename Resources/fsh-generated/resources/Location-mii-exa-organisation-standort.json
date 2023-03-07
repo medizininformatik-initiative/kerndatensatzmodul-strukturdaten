@@ -1,6 +1,6 @@
 {
   "resourceType": "Location",
-  "id": "exa-organisation-standort",
+  "id": "mii-exa-organisation-standort",
   "meta": {
     "profile": [
       "https://www.medizininformatik-initiative.de/fhir/ext/modul-struktur/StructureDefinition/location"
@@ -47,6 +47,6 @@
     "latitude": 51.331383154482
   },
   "managingOrganization": {
-    "reference": "Organization/exa-organisation-krankenhaus"
+    "reference": "Organization/mii-exa-organisation-krankenhaus"
   }
 }
