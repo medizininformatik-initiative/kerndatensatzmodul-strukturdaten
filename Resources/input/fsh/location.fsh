@@ -11,6 +11,7 @@ Title: "MII PR Struktur Location"
 * address MS
 * address only $address-de-basis
 * physicalType 1.. MS
+// ToDo: AZ - 10.03.23 - physicalType mit requiredBinding auf HL7 Int ValueSet
 * managingOrganization 1.. MS
 * managingOrganization only Reference(Organization)
 * partOf MS
