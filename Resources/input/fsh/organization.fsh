@@ -15,6 +15,7 @@ Title: "MII PR Struktur Organisation"
     // and Abteilungsidentifikator 0..1 
     // and Versorgungsstellenidentifikator 0..1
 * identifier[Institutionskennzeichen] only $identifier-iknr
+// ToDo: AZ 10.03.23: zusaetzlicheBeschreibung als Extension vom Modul Infection Control übernehmen
 * type 1.. MS
 * type ^slicing.discriminator.type = #pattern
 * type ^slicing.discriminator.path = "$this"
