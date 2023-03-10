@@ -25,6 +25,7 @@ Title: "MII PR Struktur Organisation"
     // and Abteilungstyp 0..1 
     // and Versorgungsstufe 0..1
 * type[Organisationstyp] from $vs-organisationstyp (extensible)
+// ToDo: AZ - 10.03.23 - physicalType mit requiredBinding auf HL7 Int ValueSet
 * name 1.. MS
 * alias ^comment = "There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the organization.\r\n\r\n- Kürzel der Universitätsklinika"
 * telecom ..1 MS
